@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    font-family: 'poppins';
+    margin: 0;
+    padding: 0;
+    background-color: #010101;
+    color: #ffffff;
+}
+header {
+  background-color: rgba(131, 128, 128, 0.5); /* Translucent background */
+  color: #cef7d9;
+  padding: 7px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 100; /* Ensures it stays above other elements */
+}
+
+.logo img {
+  width: 100px; /* Adjust size according to your logo */
+  height: auto;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.search {
+  position: relative;
+}
+
+.search-box {
+  padding: 5px 15px;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-box::placeholder {
+  color: #fff;
+}
+
+.search-box:focus {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* css slider */
+
+.slider
+{
+    height: 100vh;
+    margin-top: -50px;
+    position: relative;
+}
+.slider .list .item{
+    position: absolute;
+    inset:0 0 0 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+
+.slider .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider .list .item::after{
+    content: '';
+    width: 300%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(to top,#000 35%, transparent);
+}
+
+.slider .list .item .content{
+    position: absolute;
+    text-align: justify;
+    left: 0%;
+    top: 20%;
+    right: 0;
+    width: 900px;
+    max-width: 1000%;
+    padding: 0 5%;
+    z-index: 1;
+}
+
+.slider .list .item .content p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+.slider .list .item .content h2{
+    font-size: 100px;
+    margin: 0;
+    line-height: 100px;
+    text-transform: uppercase;
+}
+.slider .list .item.active{
+    opacity: 1;
+    z-index: 10;
+}
+
+ @keyframes ShowContent{
+    to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+ }
+ 
+ .slider .list .item.active p:nth-child(1),
+ .slider .list .item.active h2,
+ .slider .list .item.active p:nth-child(3){
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: ShowContent .5s .7s ease-in-out 1 forwards;
+}
+
+.slider .list .item.active h2{
+    animation-delay: 1s;
+}
+.slider .list .item.active p:nth-child(3){
+    animation-duration: 1.3s;
+}
+
+.arrows{
+    position: absolute;
+    top: 30%;
+    right: 50px;
+    z-index: 100;
+}
+.arrows button{
+    background-color: #eee5;
+    border: none;
+    font-family: monospace;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: x-large;
+    color: #fff;
+    transition: .5s;
+}
+.arrows button:hover{
+    color: #000;
+    background-color: #fff;
+}
+.thumbnail{
+    position: absolute;
+    bottom: 5px;
+    z-index: 11;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 250px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+.thumbnail::-webkit-scrollbar{
+    width: 0;
+}
+.thumbnail .item
+{
+    width: 150px;
+    height: 220px;
+    filter: brightness(.5);
+    transition: .5s;
+    flex-shrink: 0;
+}
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.thumbnail .item.active{
+    filter: brightness(1.2);
+}
+.thumbnail .item .content{
+    position: absolute;
+    inset: auto 10px 10px 10px;
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 500;
+}
+
+@media  screen and (max-width: 678px) {
+    .thumbnail{
+        justify-content: start;
+    }
+    .slider .list .item .content h2{
+        font-size: 60px;
+    }
+    .arrows{
+        top: 10%;
+    }
+}
+/* About Us Section */
+#about-us {
+    flex: 1;
+    background-color: #080000;
+    padding: 20px;
+    margin-top: -60px;
+    width: 50%;
+  }
+  
+  #about-us h1 {
+    font-size: 1em;
+    margin-bottom: 35px;
+    text-align: left;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 100;
+    word-spacing: 4.2px;
+    font-size: 55px;
+  
+  }
+  
+  #about-us p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: -42px;
+    color: #636363;
+    letter-spacing: 0.9px;
+    text-align: justify;  
+}
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #080000;
+}
+
+#about-us {
+  flex: 1;
+  margin-right: 100px;
+  width: auto;
+}
+
+.logo-container {
+  flex: 0 0 300px; /* Adjust the width as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1000px;
+  margin-top: 180px;
+}
+
+.logo-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Adjust existing styles */
+#about-us {
+  margin-top: 0;
+  padding: 5;
+}
+footer {
+    background-color: #1a3972;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-top: -200px;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0px 0;
+  }
+  
+  .social-media a img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+  }
+  
+  .contact-info p {
+    margin: 5px 0;
+  }
+  
+  .privacy a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .privacy a:hover {
+    text-decoration: underline;
+  }
+  
+  .logos img {
+    margin: 0 10px;
+    height: 50px;
+    vertical-align: middle;
+  }
+  
+  .copyright {
+    background-color: #222;
+    padding: 21px 0;
+    color: #ccc;
+    margin-top: 24px;
+  }
+  
+  .logo-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  }
+  
+  .logo-section img {
+    max-width: 194px;
+    height: 109px;
+  }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="ContactUs.css">
+</head>
+<body>
+    <div class="contact-section">
+        <div class="contact-info">
+            <h2>CONTACT US</h2>
+            <p>For any query or suggestions , feel free to contact us. We would love to recieve that from you.</p>
+            <ul class="info-list">
+                <li>
+                    <span class="icon">&#x1F4CD;</span>
+                    <div class="details">
+                        <p>Kashmere Gate, Old Delhi</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="icon">&#x1F4DE;</span>
+                    <div class="details">
+                        <p>507-123-4567</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="icon">&#x1F4E7;</span>
+                    <div class="details">
+                        <p>ForYou0820@gmail.com</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="contact-form">
+            <h3>Send Message</h3>
+            <form id="contactForm">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Type your Message..." required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function redirectToHome() {
+           // Redirect to index.html after login button click
+           window.location.href = "index.html";
+        }
+     </script>
+
+    <script src="ContactUs.js"></script>
+</body>
+</html>
