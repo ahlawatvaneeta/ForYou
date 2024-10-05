@@ -1,0 +1,123 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    overflow: hidden;
+}
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('checkUpbg.png'); /* Updated to use image name */
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px);
+    animation: pulse 10s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+.container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.site-logo {
+    max-width: 150px; /* Adjust the size of your logo */
+    height: auto;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+.nav-right a {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: white;
+}
+.nav-right input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgb(43, 26, 26);
+}
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+.upload-container {
+    background-color: rgba(255, 255, 255, 0.6); /* More translucent and closer to white */
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    max-width: 800px;
+    width: 100%;
+    height: 430px;
+    box-shadow: 0 4px 6px rgba(237, 234, 234, 0.1);
+    border: 2px solid rgb(249, 244, 244);
+}
+.upload-section, .output-section {
+    flex: 1;
+    padding: 1rem;
+
+}
+h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 6rem;
+    color: black; /* Changed to black */
+}
+.drop-area {
+    border: 2px dashed rgba(0, 0, 0, 0.5); /* Changed border color to match black text */
+    border-radius: 5px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    color: black; /* Changed text color to black */
+    transition: all 0.3s ease;
+    margin-top: 4.55rem;
+}
+.drop-area:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly more opaque on hover */
+}
+#fileInput {
+    display: none;
+}
+#outputImage {
+    max-width: 100%;
+    max-height: 200px;
+    display: none;
+    border-radius: 5px;
+}
+#outputText {
+    color: black; /* Changed text color to black */
+    text-align: center;
+    margin-top: 4.95rem; /* Match the drop area */
+}
